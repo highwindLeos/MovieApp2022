@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-    <section class="container">
+    <section className="container">
       { isLoading ? (
         <div className="loader">
           <span className="loader__text">Lording...</span>
@@ -36,13 +36,14 @@ class App extends React.Component {
         <div className="movies">
           {movies.map(movie => (
             <Movie 
-            key={movie.id} 
-            id={movie.id} 
-            year={movie.year} 
-            title={movie.title} 
-            summary={movie.summary} 
-            poster={movie.medium_cover_image} /> 
-            // API 서버의 resoponse Data를  state 설정하고 값들을 prorps 을 Movie Component 에 전달
+              key={movie.id} 
+              id={movie.id} 
+              year={movie.year} 
+              title={movie.title} 
+              summary={movie.summary} 
+              poster={movie.medium_cover_image} 
+              genres={movie.genres} /> 
+              // API 서버의 resoponse Data를  state 설정하고 값들을 prorps 을 Movie Component 에 전달
           ))}
         </div>
       )} 
