@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
-import About from "./routes/About";
-import Home from "./routes/Home";
+import About from "./components/About";
+import Home from "./components/Home";
 import Navigation from "./routes/Navigation";
 
 // function Type Component
