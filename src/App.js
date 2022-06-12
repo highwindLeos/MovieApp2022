@@ -2,48 +2,21 @@ import React from "react";
 
 // Class Type Component
 class App extends React.Component {
-
-  constructor(props){
-    super(props);
-    console.log("hellow");
-  } // 생성자
-
-  componentDidMount(){
-    console.log('component Did Mount');
-  } // 컴포넌트가 생성되고 실행됨
-
-  componentDidUpdate(){
-    console.log('component Did Update');
-  } // 컴포넌트가 수정되면 실행됨
-
-  componentWillUnmount(){
-    console.log('Goodbye, cruel World');
-  } // 컴포넌트가 화면에서 삭제되면 실행됨
-
-  state = {
-    count : 0,
-  };
-
-  add = () => {
-    this.setState(current => ({count : current.count + 1,
-    }));
-  };
   
-  minus = () => {
-    this.setState(current => ({count : current.count - 1
-    }));
-    
-  }; 
+  state = {
+    isLoading : true,
+    movies : [],
+  }; // state 정의 : 변경될 데이터를 state 에 정의하여 서버통신 후 Front 에 출력하게됨
+
+  componentDidMount(){ // Movie App 로딩을 실행 할 절차를 해당 함수에서 구현
+    setTimeout(() =>{
+      this.setState({ isLoading : false })
+    }, 6000);
+  } // 컴포넌트가 화면에 그려지고 실행됨
 
   render() {
-    console.log("render"); // 랜더링.
-    return (
-      <div>
-        <h1>the Number is : {this.state.count}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
-      </div>
-    );
+    const { isLoading } = this.state;
+    return <div>{isLoading ? 'Loding...' : 'We are ready!'}</div>;
   }
 }
 
