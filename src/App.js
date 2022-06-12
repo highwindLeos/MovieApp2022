@@ -1,68 +1,50 @@
-import PropTypes from 'prop-types';
+import React from "react";
 
-const foodILike = [
-  {
-    id : 1 ,
-    name : "kimchi",    
-    image : "https://s1.zerochan.net/Da.Capo.600.1259774.jpg",    
-    rating : 5,    
-  },
-  {
-    id : 2 ,
-    name : "Samgyeopsal",    
-    image : "https://s1.zerochan.net/Da.Capo.600.1160109.jpg",    
-    rating : 4.9,    
-  },
-  {
-    id : 3 ,
-    name : "bibimbap",    
-    image : "https://s1.zerochan.net/Da.Capo.600.894384.jpg",    
-    rating : 3.5,    
-  },
-  {
-    id : 4 ,
-    name : "Doncasu",    
-    image : "https://s1.zerochan.net/Da.Capo.600.894348.jpg",    
-    rating : 4.5,    
-  },
-  {
-    id : 5 ,
-    name : "Kimbap",    
-    image : "https://s1.zerochan.net/Da.Capo.600.894338.jpg",    
-    rating : 3.9,    
-  },
-];
+// Class Type Component
+class App extends React.Component {
 
-function Food({ name, picture, rating }){
-  return(
+  constructor(props){
+    super(props);
+    console.log("hellow");
+  } // 생성자
+
+  componentDidMount(){
+    console.log('component Did Mount');
+  } // 컴포넌트가 생성되고 실행됨
+
+  componentDidUpdate(){
+    console.log('component Did Update');
+  } // 컴포넌트가 수정되면 실행됨
+
+  componentWillUnmount(){
+    console.log('Goodbye, cruel World');
+  } // 컴포넌트가 화면에서 삭제되면 실행됨
+
+  state = {
+    count : 0,
+  };
+
+  add = () => {
+    this.setState(current => ({count : current.count + 1,
+    }));
+  };
+  
+  minus = () => {
+    this.setState(current => ({count : current.count - 1
+    }));
+    
+  }; 
+
+  render() {
+    console.log("render"); // 랜더링.
+    return (
       <div>
-        <h2>I like {name}</h2>
-        <h4>{rating} / 5.0</h4>
-        <img src={picture} alt={name} />
+        <h1>the Number is : {this.state.count}</h1>
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
       </div>
-  );
-}
-
-Food.propTypes = {
-  name : PropTypes.string.isRequired ,
-  picture : PropTypes.string.isRequired ,
-  rating : PropTypes.number
-}
-
-/*
-const reanderFood = (dish) => {
-  return <Food name={dish.name} picture={dish.image} />
-}
-*/
-
-function App() {
-  return (
-    <div>
-      {foodILike.map(dish => (
-        <Food key={dish.id} name={dish.name} picture={dish.image} rating={dish.rating} />
-      ))}
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
