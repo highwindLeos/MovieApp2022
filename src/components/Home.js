@@ -20,6 +20,7 @@ class Home extends React.Component {
 
     this.setState({movies, isLoading : false}); // 스테이트 배열에 객체 값을 세팅
   }
+  
   componentDidMount(){ // Movie App 로딩을 실행 할 절차를 해당 함수에서 구현
     this.getMovies()
   } // 컴포넌트가 화면에 그려지고 실행됨

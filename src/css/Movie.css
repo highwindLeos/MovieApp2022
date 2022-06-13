@@ -45,8 +45,25 @@
     margin: 5px 0;
 }
 
-.movie__genres li,
 .movie .movie__year {
     margin-right: 10px;
     font-size: 14px;
+}
+
+.movie__genres li {
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #abaeb9;
+    border-radius: 15px;
+}
+
+.movie__genres li:hover {
+    font-weight: bold;
+    color : white;
+    background-color : #abaeb9;
+}
+
+.movie__data hr {
+    margin-top: 20px;
 }
