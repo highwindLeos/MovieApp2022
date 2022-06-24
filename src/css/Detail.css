@@ -1,0 +1,63 @@
+/* Css file */
+.movie__detail {
+    width: 70%;
+    margin: 5% auto;
+    background-color: white;
+    margin-bottom: 70px;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 15px;
+    color: #abaeb9;
+    box-shadow: 0 13px 27px -5px rgba(50, 50 93, 0.25),
+                0 8px 16px -8px rgba(0, 0, 0, 0.3),
+                0 -6px 16px -6px rgba(0, 0, 0, 0.25);
+}
+
+.movie__detail img {
+    position: relative;
+    top : -50px;
+    left: 2%;
+    max-width: 350px;
+    width: 300px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50 , 93, 0.25),
+                0 18px 36px -18px rgba(0, 0 , 3, 0.3),
+                0 -12px 36px -8px rgba(0, 0 , 0, 0.25);
+}
+
+.movie__detail .movie__title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #2c2c2c;
+}
+
+.movie__detail .movie__genres {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0;
+}
+
+.movie__detail .movie__year {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.movie__genres li {
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #abaeb9;
+    border-radius: 15px;
+}
+
+.movie__genres li:hover {
+    font-weight: bold;
+    color : white;
+    background-color : #abaeb9;
+}
+
+.movie__data hr {
+    margin-top: 20px;
+}
